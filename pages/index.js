@@ -1,9 +1,11 @@
-import Link from "next/link";
 import { HiMail } from "react-icons/hi";
 import { useState } from "react";
+import { useRouter } from "next/router";
 
 const WeddingInvitation = () => {
   const [isMusicPlaying, setIsMusicPlaying] = useState(false);
+  const router = useRouter();
+  const { name } = router.query;
 
   const toggleMusic = () => {
     setIsMusicPlaying(!isMusicPlaying);
@@ -33,7 +35,7 @@ const WeddingInvitation = () => {
           <div className="flex flex-col text-start py-4 px-2">
             <h2 className="text-white font-poppins">Kepada</h2>
             <p className="text-white font-poppins text-xl font-semibold">
-              Dilla Maulana
+              {name}
             </p>
           </div>
           <a href="/home">

@@ -6,10 +6,10 @@ import Countdown from "../components/countdown";
 import Footer from "../components/footer";
 import Slide from "../components/slide";
 import { GoHomeFill } from "react-icons/go";
-import { IoIosMusicalNotes, IoMdPhotos } from "react-icons/io";
+import { IoMdPhotos } from "react-icons/io";
 import { FaBook } from "react-icons/fa";
-import { FaCircleDown } from "react-icons/fa6";
 import Musik from "../components/musik";
+import RSVP from "../components/rsvp";
 
 function Home() {
   const [scrollPosition, setScrollPosition] = useState(0);
@@ -106,8 +106,6 @@ function Home() {
           <div className="text-sm pb-2 font-poppins font-normal">
             <p> Putri Bapak Iim Abdurohman</p>
             <p> & Ibu Solihat</p>
-            <p> Kampung Sagaranten Rt 01 Rw 04</p>
-            <p> Ds. Sukasono Kec. Sukawening</p>
           </div>
           <a href="https://www.instagram.com/merahmu_/">
             <div className="shadow-[10px_8px_10px_0px_rgba(0,0,0,0.25)] flex items-center bg-[#9B7651] text-white font-bold py-1 px-4 rounded-lg hover:scale-105 transition duration-200">
@@ -135,8 +133,6 @@ function Home() {
           <div className="text-sm pb-2 font-poppins font-normal">
             <p> Putra Bapak Jajang Nurodin </p>
             <p> & Ibu Ade Supriyatin </p>
-            <p> Kampung Tagog Rt 01 Rw 01 </p>
-            <p> Ds. Sukaluyu Kec. Sukawening</p>
           </div>
           <a href="https://www.instagram.com/adan.magrib_/">
             <div className="shadow-[10px_8px_10px_0px_rgba(0,0,0,0.25)] flex items-center bg-[#9B7651]  text-white font-bold py-1 px-4 rounded-lg hover:scale-105 transition duration-200 ">
@@ -164,23 +160,6 @@ function Home() {
             </p>
             <Countdown />
           </div>
-          <div className="py-4">
-            <h1 className="font-sacramento text-[#E0AA3E] text-2xl">
-              Resepsi Pernikahan
-            </h1>
-            <ol className="font-poppins"> Minggu, 28 APRIL 2024 </ol>
-            <ol className="font-poppins"> Pukul 10:00 WIB - 14:00 WIB </ol>
-            <div className="py-2">
-              <a href="https://www.google.com/maps/place/7%C2%B007'44.6%22S+108%C2%B000'08.2%22E/@-7.129045,107.9996987,17z/data=!3m1!4b1!4m4!3m3!8m2!3d-7.129045!4d108.0022736?entry=ttu">
-                <button className="bg-gray-300 hover:bg-[#2AB318] text-white font-poppins py-2 px-4 rounded-lg items-center justify-center hover:scale-105 transition duration-500">
-                  <div className="flex justify-center items-center">
-                    <IoLocationSharp />
-                    <p className="text-sm font-poppins">Lokasi Acara Kami</p>
-                  </div>
-                </button>
-              </a>
-            </div>
-          </div>
           <div>
             <h1 className="font-sacramento text-[#E0AA3E] text-2xl">
               {" "}
@@ -199,6 +178,24 @@ function Home() {
               </a>
             </div>
           </div>
+          <div className="py-4">
+            <h1 className="font-sacramento text-[#E0AA3E] text-2xl">
+              Resepsi Pernikahan
+            </h1>
+            <ol className="font-poppins"> Minggu, 28 APRIL 2024 </ol>
+            <ol className="font-poppins"> Pukul 10:00 WIB - 14:00 WIB </ol>
+            <div className="py-2">
+              <a href="https://www.google.com/maps/place/7%C2%B007'44.6%22S+108%C2%B000'08.2%22E/@-7.129045,107.9996987,17z/data=!3m1!4b1!4m4!3m3!8m2!3d-7.129045!4d108.0022736?entry=ttu">
+                <button className="bg-gray-300 hover:bg-[#2AB318] text-white font-poppins py-2 px-4 rounded-lg items-center justify-center hover:scale-105 transition duration-500">
+                  <div className="flex justify-center items-center">
+                    <IoLocationSharp />
+                    <p className="text-sm font-poppins">Lokasi Acara Kami</p>
+                  </div>
+                </button>
+              </a>
+            </div>
+          </div>
+
           <div>
             <h1>
               Besar harapan kami jika Bapak/Ibu/Saudara/i berkenan hadir pada
@@ -341,10 +338,8 @@ function Home() {
       </div>
       {/*end our gallery*/}
       {/*Kehadiran*/}
-      <div id="kehadiran" className="flex justify-center px-8">
-        <h1 className="font-sacramento text-[#E0AA3E] text-3xl pb-6">
-          Kehadiran
-        </h1>
+      <div id="kehadiran">
+        <RSVP />
       </div>
       {/*end Kehadiran*/}
       <Footer />
@@ -370,7 +365,6 @@ function Home() {
           <Musik isPlaying={isPlaying} onTogglePlay={togglePlay} />
         </h1>
       </div>
-
       {/* End button back to home */}
     </>
   );
